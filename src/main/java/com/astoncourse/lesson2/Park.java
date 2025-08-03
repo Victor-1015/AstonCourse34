@@ -2,7 +2,6 @@ package com.astoncourse.lesson2;
 
 public class Park {
 
-    // Внутренний класс Attraction — описывает аттракцион
     public class Attraction {
         private String name;
         private String startTime;
