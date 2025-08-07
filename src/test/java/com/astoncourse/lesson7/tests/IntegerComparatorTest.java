@@ -6,18 +6,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class IntegerComparatorTest {
 
-    @Test
-    void testEqualNumbers() {
-        assertTrue(IntegerComparator.areEqual(5, 5));
+    @Test void testEqual() {
+        assertEquals(0, IntegerComparator.compare(5, 5));
     }
 
-    @Test
-    void testIsGreater() {
-        assertTrue(IntegerComparator.isGreater(10, 5));
+    @Test void testGreaterThan() {
+        assertTrue(IntegerComparator.compare(10, 5) > 0);
     }
 
-    @Test
-    void testIsLess() {
-        assertTrue(IntegerComparator.isLess(3, 7));
+    @Test void testLessThan() {
+        assertTrue(IntegerComparator.compare(3, 5) < 0);
     }
 }

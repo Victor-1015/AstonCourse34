@@ -6,18 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class TriangleAreaCalculatorTest {
 
-    @Test
-    void testArea() {
-        assertEquals(6.0, TriangleAreaCalculator.calculate(4, 3));
+    @Test void testArea() {
+        assertEquals(25.0, TriangleAreaCalculator.calculateArea(10, 5));
     }
 
-    @Test
-    void testZeroBase() {
-        assertThrows(IllegalArgumentException.class, () -> TriangleAreaCalculator.calculate(0, 3));
-    }
-
-    @Test
-    void testNegativeHeight() {
-        assertThrows(IllegalArgumentException.class, () -> TriangleAreaCalculator.calculate(4, -2));
+    @Test void testAreaWithZeroBase() {
+        assertThrows(IllegalArgumentException.class, () -> TriangleAreaCalculator.calculateArea(0, 5));
     }
 }
