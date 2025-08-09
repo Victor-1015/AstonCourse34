@@ -10,7 +10,6 @@ import java.util.List;
 
 public class MtsHomePage extends BasePage {
 
-    // --- Локаторы (без изменений) ---
     @FindBy(id = "cookie-agree") private WebElement acceptCookiesButton;
     @FindBy(xpath = "//h2[.='Онлайн пополнение без комиссии']") private WebElement paymentBlockTitle;
     private final By paymentLogosLocator = By.cssSelector("div.pay__partners img");
@@ -30,16 +29,13 @@ public class MtsHomePage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    // --- Методы ---
 
     private void clickViaJs(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
 
-    // ИЗМЕНЯЕМ ВСЕ МЕТОДЫ КЛИКА ПО ВКЛАДКАМ
     public void clickHomeInternetTab() {
         clickViaJs(serviceDropdown);
-        // Ждем видимости элемента, а потом кликаем JS
         clickViaJs(wait.until(ExpectedConditions.visibilityOf(homeInternetTab)));
     }
 
@@ -53,7 +49,6 @@ public class MtsHomePage extends BasePage {
         clickViaJs(wait.until(ExpectedConditions.visibilityOf(debtTab)));
     }
 
-    // Остальные методы без изменений
     public void acceptCookiesIfPresent() {
         try {
             WebDriverWait cookieWait = new WebDriverWait(driver, Duration.ofSeconds(3));
