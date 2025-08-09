@@ -27,16 +27,12 @@ public class MtsByPaymentTest {
         mtsHomePage.acceptCookiesIfPresent();
     }
 
-    // ИЗМЕНЕНИЕ ЗДЕСЬ
     @Test(description = "Проверка названия блока оплаты")
     public void testBlockTitle() {
-        // 1. Получаем "сырой" текст со страницы
         String rawTitle = mtsHomePage.getPaymentBlockTitleText();
 
-        // 2. Заменяем возможный перенос строки на пробел
         String normalizedTitle = rawTitle.replace("\n", " ");
 
-        // 3. Проверяем уже нормализованный текст
         Assert.assertTrue(normalizedTitle.contains("Онлайн пополнение без комиссии"), "Заголовок блока неверный.");
     }
 

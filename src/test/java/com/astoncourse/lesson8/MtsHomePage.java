@@ -13,12 +13,10 @@ import java.util.List;
 
 public class MtsHomePage extends BasePage {
 
-    // --- Локаторы ---
 
     @FindBy(id = "cookie-agree")
     private WebElement acceptCookiesButton;
 
-    // ИСПОЛЬЗУЕМ ТОЧКУ ВМЕСТО TEXT() для учета вложенных тегов
     @FindBy(xpath = "//h2[.='Онлайн пополнение без комиссии']")
     private WebElement paymentBlockTitle;
 
@@ -36,15 +34,12 @@ public class MtsHomePage extends BasePage {
     @FindBy(xpath = "//form[@id='pay-connection']//button[@type='submit']")
     private WebElement submitButton;
 
-    // Исправляем опечатку с '///' на '//'
     @FindBy(xpath = "//iframe[contains(@class, 'bepaid-iframe')]")
     private WebElement paymentIframe;
 
     public MtsHomePage(WebDriver driver) {
         super(driver);
     }
-
-    // --- Методы ---
 
     public void acceptCookiesIfPresent() {
         try {
