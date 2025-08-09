@@ -29,20 +29,15 @@ public class MtsPaymentDetailsTest {
 
     @Test(description = "Проверка плейсхолдеров на всех вкладках оплаты")
     public void testPlaceholdersOnAllTabs() {
-        // 1. Услуги связи
         Assert.assertEquals(mtsHomePage.getPhoneInputPlaceholder(), "Номер телефона");
 
-        // 2. Домашний интернет
         mtsHomePage.clickHomeInternetTab();
         Assert.assertEquals(mtsHomePage.getHomeInternetPlaceholder(), "Номер абонента");
 
-        // 3. Рассрочка
         mtsHomePage.clickInstallmentTab();
         Assert.assertEquals(mtsHomePage.getInstallmentPlaceholder(), "Номер абонента");
 
-        // 4. Задолженность
         mtsHomePage.clickDebtTab();
-        // ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ: Здесь тоже должен быть "Номер абонента"
         Assert.assertEquals(mtsHomePage.getDebtPlaceholder(), "Номер абонента");
     }
 
