@@ -1,9 +1,10 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="MtsByTestSuite" verbose="1">
-    <test name="Payment Block Tests">
+    <test name="All Mts.by Tests">
         <classes>
             <class name="com.astoncourse.lesson8.MtsByPaymentTest"/>
+            <class name="com.astoncourse.lesson9.MtsPaymentDetailsTest"/>
         </classes>
     </test>
 </suite>
