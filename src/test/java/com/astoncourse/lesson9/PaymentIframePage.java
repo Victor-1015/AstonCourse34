@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class PaymentIframePage extends BasePage {
 
-    // Локаторы в формате By
     private final By amountDisplayLocator = By.className("pay-description_cost");
     private final By googlePayButtonLocator = By.className("GPay-logo");
     private final By phoneNumberDisplayLocator = By.className("pay-description_text");
@@ -20,7 +19,6 @@ public class PaymentIframePage extends BasePage {
         super(driver);
     }
 
-    // Методы с надёжным ожиданием по локатору
     public String getAmount() {
         WebElement amountDisplay = wait.until(ExpectedConditions.visibilityOfElementLocated(amountDisplayLocator));
         return amountDisplay.getText().replace(" BYN", "");
@@ -42,7 +40,6 @@ public class PaymentIframePage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(cvcInputLocator)).getAttribute("placeholder");
     }
     public boolean areLogosDisplayed() {
-        // Ждем хотя бы один логотип
         wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(paymentLogosInIframeLocator));
         return !driver.findElements(paymentLogosInIframeLocator).isEmpty();
     }
